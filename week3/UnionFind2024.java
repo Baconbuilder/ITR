@@ -1,3 +1,4 @@
+package week3;
 
 
 //todo: student 1 id & name, student 2 id & name
@@ -150,7 +151,7 @@ public class UnionFind2024 {
 		uf.union(9, 6);
 		uf.union(6, 10);
 
-		int[] a = new int[] {0,10,11,3,2,5,-1,-1};
+		// int[] a = new int[] {0,10,11,3,2,5,-1,-1};
 //		uf.printNodes(a, 2);
 		uf.printNodes(uf.nodesWithDepthOf(0), 0);
 		uf.printNodes(uf.nodesWithDepthOf(1), 1);
