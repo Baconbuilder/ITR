@@ -119,9 +119,29 @@ public class UnionFind2024 {
 	    
 	    // (optional) todo: complete the method to return the size of the connected component with item p.
 	    public int componentSize(int p) {
-	    	int size = 0;
-         
-	    	return size;
+	    	int root = find(p);
+	    	int [] depth_array = new int [parent.length];
+	    	
+	    	//initialize the depth array
+	    	for(int i=0; i<parent.length ;i++) {
+	    		depth_array[i] = -1;
+	    	}
+	    	
+	    	for(int i=0; i<parent.length ;i++) {
+	    		if(find(i) == root) {
+	    			depth_array[i] = 1;
+	    		}
+	    	}
+	    	
+	    	int count=0;
+	    	
+	    	for(int i=0; i<parent.length ;i++) {
+	    		if(depth_array[i] == 1)
+	    			count++;
+	    	}
+	    	
+	    	
+	    	return count;
 	    }
 	    
 	    public void printNodes(int[] nodes, int depth) {
