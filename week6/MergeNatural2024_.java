@@ -68,50 +68,41 @@ public class MergeNatural2024_ {
         Comparable aux[] = new Comparable[a.length];
         int n = a.length;
         int startIndex = 0;
-        // temp = natural.findNextRun(a, 2);
-        // temp = natural.findNextRun(a, 5);
-        // temp = natural.findNextRun(a, 7);
-        // temp = natural.findNextRun(a, 8);
-        // temp = natural.findNextRun(a, 11);
         
         // int temp_int = (int) temp;
         // temp_int++;
         // int endIndex = a.length-1;
-        boolean first = true;
-        while(!isSorted(a)){
-            if (first){
-                Comparable lo = natural.findNextRun(a, startIndex);
+        // while(!isSorted(a)){
+        //     Comparable lo = natural.findNextRun(a, startIndex);
+        //     int lo_int = (int) lo;
+        //     lo_int++;
+        //     Comparable high = natural.findNextRun(a, lo_int);
+        //     int high_int = (int) high;
+        //     high_int++;
+        //     // int mid = 
+        //     merge(a,aux,startIndex,lo_int-1,high_int-1);
+        //     startIndex = 0;
+            
+        // }
+        // natural.findNextRun(a, 0);
+
+        while (!isSorted(a)) {
+            int i = 0;
+            while (i < a.length) {
+                Comparable lo = natural.findNextRun(a, i);
                 int lo_int = (int) lo;
-                lo_int++;
-                Comparable high = natural.findNextRun(a, lo_int);
+                int mid = lo_int; // Set mid to the beginning of the current run
+                if (mid == a.length - 1) // Prevent index from going out of bounds
+                    break;
+                Comparable high = natural.findNextRun(a, mid + 1);
                 int high_int = (int) high;
-                high_int++;
-                // int mid = 
-                merge(a,aux,startIndex,lo_int-1,high_int-1);
-                startIndex = 0;
+                int hi = high_int;
+                merge(a, aux, i, mid, hi); // Merges the subarrays
+                i = hi + 1; // Move to the next unmerged segment
             }
         }
+        natural.findNextRun(a, 0);
 
-        // while(temp_int != endIndex){
-        //     System.out.println("here");
-        //     System.out.println(temp);
-        //     System.out.println(a[endIndex]);
-        //     // System.out.println(temp_int);
-        //     temp = natural.findNextRun(a, temp_int);
-        //     temp_int = (int) temp;
-        //     temp_int++;
-        //     // if (temp_int == endIndex){
-        //     //     break;
-        //     merge(a, aux, );
-        //     // }
-        // }
-
-        // while (temp != a[endIndex]){
-
-        // }
-        
-
-        // System.out.println(temp);
 
     }
 
