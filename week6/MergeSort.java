@@ -1,5 +1,3 @@
-package week6;
-
 public class MergeSort {
     public void sort(int[] elements) {
       int length = elements.length;
